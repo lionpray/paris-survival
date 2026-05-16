@@ -13,14 +13,16 @@ const state = {
   usedIndices: { morning: [], lunch: [], snack: [], dinner: [] },
   currentInteraction: null,
   answered: false,
+  dayExpressions: [],
 };
 
 // ── DOM refs ──
 const screens = {
-  intro: document.getElementById('screen-intro'),
-  game:  document.getElementById('screen-game'),
-  rest:  document.getElementById('screen-rest'),
-  end:   document.getElementById('screen-end'),
+  intro:   document.getElementById('screen-intro'),
+  game:    document.getElementById('screen-game'),
+  summary: document.getElementById('screen-summary'),
+  rest:    document.getElementById('screen-rest'),
+  end:     document.getElementById('screen-end'),
 };
 
 const ui = {
@@ -39,6 +41,9 @@ const ui = {
   npcListenBtn:    document.getElementById('npc-listen-btn'),
   optionsGrid:     document.getElementById('options-grid'),
   voiceBtn:        document.getElementById('voice-btn'),
+  summaryCards:    document.getElementById('summary-cards'),
+  summaryTitle:    document.getElementById('summary-title'),
+  summaryNextBtn:  document.getElementById('summary-next-btn'),
   feedbackOverlay: document.getElementById('feedback-overlay'),
   feedbackIcon:    document.getElementById('feedback-icon'),
   feedbackHp:      document.getElementById('feedback-hp'),
@@ -61,6 +66,20 @@ const ui = {
   scoreTotal:      document.getElementById('score-total'),
   scoreHp:         document.getElementById('score-hp'),
 };
+
+// ══════════════════════════════════════
+// KNOWN SCENARIOS (localStorage)
+// ══════════════════════════════════════
+function getKnownScenarios() {
+  try { return JSON.parse(localStorage.getItem('parisSurvivalKnown') || '[]'); } catch { return []; }
+}
+
+function setKnownScenario(id, isKnown) {
+  const list = getKnownScenarios();
+  if (isKnown && !list.includes(id)) list.push(id);
+  else if (!isKnown) { const i = list.indexOf(id); if (i >= 0) list.splice(i, 1); }
+  localStorage.setItem('parisSurvivalKnown', JSON.stringify(list));
+}
 
 // ══════════════════════════════════════
 // TTS
@@ -227,14 +246,17 @@ function updateTimeDots() {
 }
 
 function generateDayPlan() {
+  const known = getKnownScenarios();
   state.todayPlan = GAME_DATA.mealOrder.map(meal => {
     const pool = GAME_DATA.pools[meal];
     let used = state.usedIndices[meal];
     if (used.length >= pool.length) { state.usedIndices[meal] = []; used = state.usedIndices[meal]; }
     const avail = pool.map((_, i) => i).filter(i => !used.includes(i));
-    const idx = avail[Math.floor(Math.random() * avail.length)];
+    const nonKnown = avail.filter(i => !known.includes(`${meal}_${i}`));
+    const pickFrom = nonKnown.length > 0 ? nonKnown : avail;
+    const idx = pickFrom[Math.floor(Math.random() * pickFrom.length)];
     used.push(idx);
-    return pool[idx];
+    return { ...pool[idx], scenarioId: `${meal}_${idx}` };
   });
 }
 
@@ -250,6 +272,10 @@ function renderScene() {
 
   ui.dayLabel.textContent = 'Jour ' + state.day + ' / ' + state.totalDays;
   updateTimeDots();
+
+  if (!state.dayExpressions.find(e => e.scenarioId === scenario.scenarioId)) {
+    state.dayExpressions.push(scenario);
+  }
 }
 
 function renderInteraction() {
@@ -379,7 +405,125 @@ function advance() {
     return;
   }
 
-  showRestScreen();
+  showSummaryScreen();
+}
+
+// ══════════════════════════════════════
+// SUMMARY
+// ══════════════════════════════════════
+function showSummaryScreen() {
+  speechSynthesis.cancel();
+  showScreen('summary');
+
+  ui.summaryTitle.textContent = state.day + '일 표현 정리';
+  ui.summaryCards.innerHTML = '';
+
+  const known = getKnownScenarios();
+
+  state.dayExpressions.forEach(scenario => {
+    const card = document.createElement('div');
+    card.className = 'summary-card';
+    card.dataset.id = scenario.scenarioId;
+
+    const locHeader = document.createElement('div');
+    locHeader.className = 'summary-location-header';
+    locHeader.innerHTML = `<span class="summary-location-emoji">${scenario.emoji}</span><span class="summary-location-name">${scenario.location}</span>`;
+    card.appendChild(locHeader);
+
+    scenario.interactions.forEach(interaction => {
+      const exchange = document.createElement('div');
+      exchange.className = 'summary-exchange';
+
+      const isSituation = interaction.npcName === 'Situation';
+      const correctOpt = interaction.options.find(o => o.correct);
+
+      const npcLine = document.createElement('div');
+      npcLine.className = 'summary-npc-line';
+
+      const npcSpeaker = document.createElement('span');
+      npcSpeaker.className = 'summary-speaker';
+      npcSpeaker.textContent = isSituation ? '상황' : interaction.npcName;
+
+      const npcFrRow = document.createElement('div');
+      npcFrRow.className = 'summary-fr-row';
+
+      const npcFrText = document.createElement('span');
+      npcFrText.className = 'summary-fr';
+      npcFrText.textContent = interaction.npcFrench;
+
+      const npcListenBtn = document.createElement('button');
+      npcListenBtn.className = 'listen-btn summary-listen';
+      npcListenBtn.textContent = '🔊';
+      if (!isSituation) npcListenBtn.addEventListener('click', () => speak(interaction.npcFrench));
+      else npcListenBtn.style.visibility = 'hidden';
+
+      npcFrRow.appendChild(npcFrText);
+      npcFrRow.appendChild(npcListenBtn);
+
+      const npcMeaning = document.createElement('span');
+      npcMeaning.className = 'summary-meaning';
+      npcMeaning.textContent = interaction.npcMeaning || '';
+
+      npcLine.appendChild(npcSpeaker);
+      npcLine.appendChild(npcFrRow);
+      npcLine.appendChild(npcMeaning);
+
+      const answerLine = document.createElement('div');
+      answerLine.className = 'summary-answer-line';
+
+      const answerSpeaker = document.createElement('span');
+      answerSpeaker.className = 'summary-speaker summary-correct-speaker';
+      answerSpeaker.textContent = '✅ 정답';
+
+      const answerFrRow = document.createElement('div');
+      answerFrRow.className = 'summary-fr-row';
+
+      const answerText = document.createElement('span');
+      answerText.className = 'summary-fr';
+      answerText.textContent = correctOpt ? correctOpt.text.replace(/\n/g, ' ') : '';
+
+      const answerListenBtn = document.createElement('button');
+      answerListenBtn.className = 'listen-btn summary-listen';
+      answerListenBtn.textContent = '🔊';
+      if (correctOpt) answerListenBtn.addEventListener('click', () => speak(correctOpt.text));
+
+      answerFrRow.appendChild(answerText);
+      answerFrRow.appendChild(answerListenBtn);
+
+      const answerMeaning = document.createElement('span');
+      answerMeaning.className = 'summary-meaning';
+      answerMeaning.textContent = correctOpt && correctOpt.meaning ? correctOpt.meaning : '';
+
+      answerLine.appendChild(answerSpeaker);
+      answerLine.appendChild(answerFrRow);
+      answerLine.appendChild(answerMeaning);
+
+      exchange.appendChild(npcLine);
+      exchange.appendChild(answerLine);
+      card.appendChild(exchange);
+    });
+
+    const knownLabel = document.createElement('label');
+    knownLabel.className = 'summary-known-label' + (known.includes(scenario.scenarioId) ? ' is-known' : '');
+
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.className = 'summary-known-cb';
+    cb.checked = known.includes(scenario.scenarioId);
+    cb.addEventListener('change', () => {
+      setKnownScenario(scenario.scenarioId, cb.checked);
+      knownLabel.classList.toggle('is-known', cb.checked);
+    });
+
+    const cbText = document.createElement('span');
+    cbText.textContent = '이미 알아요 — 다음엔 이 장소 건너뜀';
+
+    knownLabel.appendChild(cb);
+    knownLabel.appendChild(cbText);
+    card.appendChild(knownLabel);
+
+    ui.summaryCards.appendChild(card);
+  });
 }
 
 // ══════════════════════════════════════
@@ -412,6 +556,7 @@ function startNextDay() {
   state.interactionIndex = 0;
   state.dayCorrect = 0;
   state.dayTotal = 0;
+  state.dayExpressions = [];
   generateDayPlan();
   showScreen('game');
   renderScene();
@@ -452,7 +597,8 @@ function startGame() {
     hp: GAME_DATA.initialHP, day: 1, mealIndex: 0, interactionIndex: 0,
     correctCount: 0, totalCount: 0, dayCorrect: 0, dayTotal: 0,
     todayPlan: [], currentInteraction: null, answered: false,
-    usedIndices: { morning: [], lunch: [], snack: [], dinner: [] }
+    usedIndices: { morning: [], lunch: [], snack: [], dinner: [] },
+    dayExpressions: []
   });
   updateHP(0);
   generateDayPlan();
@@ -465,5 +611,6 @@ function startGame() {
 document.getElementById('start-btn').addEventListener('click', startGame);
 document.getElementById('restart-btn').addEventListener('click', startGame);
 ui.continueBtn.addEventListener('click', advance);
+ui.summaryNextBtn.addEventListener('click', showRestScreen);
 ui.restNextBtn.addEventListener('click', startNextDay);
 ui.voiceBtn.addEventListener('click', startVoiceInput);
