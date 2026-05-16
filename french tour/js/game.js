@@ -106,20 +106,25 @@ function startVoiceInput() {
 
   const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (!SpeechRec) {
-    alert('이 브라우저는 음성 인식을 지원하지 않아요.\nSafari(iOS) 또는 Chrome을 사용해 주세요.');
+    alert('음성 인식이 지원되지 않는 브라우저예요.\nSafari(iOS) 또는 Chrome을 사용해 주세요.');
     return;
   }
 
   const rec = new SpeechRec();
   rec.lang = 'fr-FR';
+  rec.continuous = false;
   rec.interimResults = false;
-  rec.maxAlternatives = 5;
+  rec.maxAlternatives = 3;
+
+  let resultHandled = false;
 
   ui.listeningOverlay.classList.add('active');
   ui.voiceBtn.disabled = true;
 
   rec.onresult = (event) => {
+    resultHandled = true;
     ui.listeningOverlay.classList.remove('active');
+
     const transcripts = Array.from(event.results[0]).map(r => r.transcript);
 
     let bestOption = null, bestWrapper = null, bestScore = 0;
@@ -144,22 +149,34 @@ function startVoiceInput() {
   };
 
   rec.onerror = (e) => {
+    resultHandled = true;
     ui.listeningOverlay.classList.remove('active');
     ui.voiceBtn.disabled = false;
     if (e.error === 'not-allowed') {
-      alert('마이크 사용 권한이 필요해요. 브라우저 설정에서 허용해 주세요.');
-    } else if (e.error !== 'no-speech' && e.error !== 'aborted') {
-      showPardon('...', null);
+      alert('마이크 사용 권한이 필요해요.\n설정 → Safari → 마이크를 허용해 주세요.');
+    } else if (e.error === 'no-speech') {
+      showPardon('(소리가 감지되지 않았어요)', null);
+    } else if (e.error !== 'aborted') {
+      showPardon('(오류: ' + e.error + ')', null);
     }
   };
 
   rec.onend = () => {
     ui.listeningOverlay.classList.remove('active');
     ui.voiceBtn.disabled = false;
+    // iOS Safari는 결과 없이 onend가 먼저 오는 경우가 많음
+    if (!resultHandled) {
+      showPardon('(음성이 감지되지 않았어요)\n더 크게, 천천히 말해보세요! 🎤', null);
+    }
   };
 
-  rec.start();
-  state._currentRec = rec;
+  try {
+    rec.start();
+  } catch (e) {
+    ui.listeningOverlay.classList.remove('active');
+    ui.voiceBtn.disabled = false;
+    alert('음성 인식 시작 오류: ' + e.message);
+  }
 }
 
 function showPardon(heard, rec) {
