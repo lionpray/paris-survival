@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>파리에서 살아남기 🥐</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- ── 인트로 ── -->
+    <div id="screen-intro" class="screen active">
+      <div class="intro-flag">🇫🇷</div>
+      <div class="intro-title">파리에서<br>살아남기</div>
+      <div class="intro-subtitle">
+        프랑스어 한마디 못 하면 굶어죽는다.<br>
+        올바른 표현을 골라 7일을 버텨라!
+      </div>
+      <div class="intro-rules">
+        <h3>생존 규칙</h3>
+        <div class="rule-item">
+          <span class="rule-icon">❤️</span>
+          <span>체력 50으로 시작. 정답은 체력을 채우고, 오답은 깎는다.</span>
+        </div>
+        <div class="rule-item">
+          <span class="rule-icon">🍽️</span>
+          <span>하루 4끼 (아침·점심·간식·저녁), 7일 동안 총 20가지 장소가 랜덤으로 등장!</span>
+        </div>
+        <div class="rule-item">
+          <span class="rule-icon">🌙</span>
+          <span>하루를 살아남으면 숙면 보너스 +15 HP. 그리고 다음 날이 시작된다.</span>
+        </div>
+        <div class="rule-item">
+          <span class="rule-icon">🔊</span>
+          <span>🔊 버튼으로 프랑스어 발음을 들을 수 있다.</span>
+        </div>
+        <div class="rule-item">
+          <span class="rule-icon">🎤</span>
+          <span>🎤 버튼으로 직접 말해볼 수 있다. 발음이 맞으면 자동으로 선택!</span>
+        </div>
+      </div>
+      <button id="start-btn" class="btn btn-secondary" style="font-size:17px; padding:16px;">
+        파리 도착 ✈️
+      </button>
+    </div>
+
+    <!-- ── 게임 ── -->
+    <div id="screen-game" class="screen">
+
+      <div id="top-bar">
+        <div id="hp-bar-container">
+          <span class="hp-label">❤️ Vitalité</span>
+          <div class="hp-track">
+            <div class="hp-fill" id="hp-fill" style="width:50%"></div>
+          </div>
+          <span class="hp-value" id="hp-value">50 / 100</span>
+        </div>
+        <div id="day-label">Jour 1 / 7</div>
+      </div>
+
+      <div id="time-bar">
+        <div class="time-dot active"><span class="dot-emoji">☀️</span>Matin</div>
+        <div class="time-dot"><span class="dot-emoji">🌞</span>Déjeuner</div>
+        <div class="time-dot"><span class="dot-emoji">🌤️</span>Goûter</div>
+        <div class="time-dot"><span class="dot-emoji">🌙</span>Dîner</div>
+      </div>
+
+      <div id="scene-card">
+        <div class="scene-header">
+          <span class="scene-emoji" id="scene-emoji">☕</span>
+          <div class="scene-meta">
+            <div class="scene-time" id="scene-time"></div>
+            <div class="scene-location-row">
+              <div class="scene-location" id="scene-location"></div>
+              <button class="listen-btn location-listen" id="location-listen-btn" title="발음 듣기">🔊</button>
+            </div>
+          </div>
+        </div>
+        <div class="scene-intro" id="scene-intro"></div>
+      </div>
+
+      <div id="interaction-card">
+        <div class="setup-text" id="setup-text"></div>
+        <div class="npc-bubble">
+          <div class="npc-name" id="npc-name"></div>
+          <div class="npc-french-row">
+            <div class="npc-french" id="npc-french"></div>
+            <button class="listen-btn" id="npc-listen-btn" title="Écouter">🔊</button>
+          </div>
+        </div>
+        <div id="options-grid"></div>
+        <button class="voice-btn" id="voice-btn">🎤 말하기</button>
+      </div>
+
+    </div>
+
+    <!-- ── 숙면 화면 ── -->
+    <div id="screen-rest" class="screen">
+      <div class="rest-moon">🌙</div>
+      <div class="rest-title" id="rest-day">Jour 1 terminé !</div>
+      <div class="rest-subtitle">파리의 밤이 깊어간다… 내일을 위해 숙면을.</div>
+      <div class="rest-card">
+        <div class="score-row">
+          <span class="label">오늘의 정답률</span>
+          <span class="value" id="rest-score">-</span>
+        </div>
+        <div class="score-row">
+          <span class="label">체력 + 숙면 보너스</span>
+          <span class="value" id="rest-hp">-</span>
+        </div>
+      </div>
+      <div class="rest-next-label" id="rest-next-label">내일도 파리는 기다린다!</div>
+      <button class="btn btn-secondary" id="rest-next-btn" style="font-size:16px; padding:15px; width:100%;">
+        Bonne nuit… →
+      </button>
+    </div>
+
+    <!-- ── 엔딩 ── -->
+    <div id="screen-end" class="screen">
+      <div class="end-emoji" id="end-emoji">🎉</div>
+      <div class="end-title"    id="end-title"></div>
+      <div class="end-subtitle" id="end-subtitle" style="white-space:pre-line;"></div>
+      <div class="score-card">
+        <div class="score-row">
+          <span class="label">정답</span>
+          <span class="value" id="score-correct">-</span>
+        </div>
+        <div class="score-row">
+          <span class="label">완료한 날</span>
+          <span class="value" id="score-total">-</span>
+        </div>
+        <div class="score-row">
+          <span class="label">남은 체력</span>
+          <span class="value" id="score-hp">-</span>
+        </div>
+      </div>
+      <button id="restart-btn" class="btn btn-secondary" style="font-size:16px; padding:15px;">
+        다시 도전하기 🔄
+      </button>
+    </div>
+
+  </div>
+
+  <!-- 피드백 오버레이 -->
+  <div id="feedback-overlay">
+    <div class="feedback-card">
+      <span class="feedback-icon" id="feedback-icon">✅</span>
+      <div class="feedback-hp gain" id="feedback-hp">+25 HP</div>
+      <p class="feedback-text" id="feedback-text"></p>
+      <button class="btn btn-primary" id="continue-btn">다음 →</button>
+    </div>
+  </div>
+
+  <!-- Pardon 오버레이 (음성 불일치) -->
+  <div id="pardon-overlay">
+    <div class="pardon-card">
+      <div class="pardon-icon">🤷</div>
+      <div class="pardon-npc">"Pardon ? Je n'ai pas compris..."</div>
+      <div class="pardon-heard">들린 내용: "<span id="pardon-text">...</span>"</div>
+      <div class="pardon-tip">힌트: 🔊 버튼으로 발음을 먼저 들어보세요!</div>
+      <div class="pardon-actions">
+        <button class="btn btn-secondary" id="pardon-retry">🎤 다시 말하기</button>
+        <button class="btn btn-primary"   id="pardon-button">버튼으로 선택</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 듣는 중 오버레이 -->
+  <div id="listening-overlay">
+    <div class="listening-card">
+      <div class="listening-mic">🎤</div>
+      <div class="listening-text">듣고 있어요…</div>
+      <div class="listening-sub">프랑스어로 말해주세요</div>
+    </div>
+  </div>
+
+  <script src="js/scenarios.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
