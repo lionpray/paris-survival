@@ -572,8 +572,8 @@ function showEndScreen(survived) {
 
   if (survived) {
     ui.endEmoji.textContent   = '🎉';
-    ui.endTitle.textContent   = '7일 파리 생존 완료!';
-    ui.endSubtitle.textContent = '프랑스어로 일주일을 버텨냈다.\n파리지앵들이 당신을 인정한다!';
+    ui.endTitle.textContent   = '7일 니스 생존 완료!';
+    ui.endSubtitle.textContent = '프랑스어로 일주일을 버텨냈다.\n니수아들이 당신을 인정한다!';
   } else {
     ui.endEmoji.textContent   = '😮‍💨';
     ui.endTitle.textContent   = '여행을 포기했다…';

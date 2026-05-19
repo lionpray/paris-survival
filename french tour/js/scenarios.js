@@ -19,8 +19,8 @@ const GAME_DATA = {
     ═══════════════════════════════ */
     morning: [
       {
-        location: "Café du Marais", emoji: "☕",
-        intro: "파리, 오전 7시 30분. 작은 카페에서 하루를 시작하자.",
+        location: "Café de Turin", emoji: "☕",
+        intro: "니스, 오전 7시 30분. 가리발디 광장의 유서 깊은 카페에서 하루를 시작하자.",
         interactions: [
           {
             setup: "카페 문을 열고 들어섰다. 앞치마를 두른 웨이터가 다가온다.",
@@ -29,7 +29,7 @@ const GAME_DATA = {
             options: [
               { text: "Bonjour !\nUne table pour une personne,\ns'il vous plaît.", correct: true,
                 meaning: "안녕하세요! 1인 자리 부탁해요.",
-                feedback: "웨이터가 미소를 지으며 창가 자리로 안내해 준다. 파리의 아침이 시작됐다! ✨" },
+                feedback: "웨이터가 미소를 지으며 광장이 보이는 자리로 안내해 준다. 니스의 아침이 시작됐다! ✨" },
               { text: "Bonsoir !\nUne table pour deux,\ns'il vous plaît.", correct: false,
                 feedback: "아침에 저녁 인사(Bonsoir)에 2인 테이블이라니! 웨이터가 의아한 표정으로 구석 자리에 안내한다. 😅" },
               { text: "L'addition,\ns'il vous plaît.", correct: false,
@@ -44,9 +44,9 @@ const GAME_DATA = {
             npcName: "Serveur", npcFrench: '"Vous désirez ?"',
             npcMeaning: "무엇을 드릴까요?",
             options: [
-              { text: "Un croissant et\nun café au lait,\ns'il vous plaît.", correct: true,
-                meaning: "크루아상 하나와 카페오레 부탁해요.",
-                feedback: "완벽한 주문! 따뜻한 크루아상과 카페오레가 나왔다. 든든한 파리의 아침! 🥐☕" },
+              { text: "Un café au lait et\nune fougassette,\ns'il vous plaît.", correct: true,
+                meaning: "카페오레와 푸가세트(오렌지꽃 향 니스 빵) 부탁해요.",
+                feedback: "오렌지꽃 향 가득한 푸가세트와 카페오레! 가리발디 광장의 부드러운 아침. 🥖☕" },
               { text: "Deux cafés et\nun pain,\ns'il vous plaît.", correct: false,
                 feedback: "혼자인데 커피 두 잔이 나왔다. 한 잔은 그냥 남겼다. ☕☕" },
               { text: "Je voudrais dormir.", correct: false,
@@ -59,8 +59,8 @@ const GAME_DATA = {
         ]
       },
       {
-        location: "Boulangerie Jourdain", emoji: "🥖",
-        intro: "오전 8시. 동네 빵집에서 간단하게 아침을 해결하기로 했다.",
+        location: "Boulangerie Multari", emoji: "🥖",
+        intro: "오전 8시. 비외 니스의 유명 빵집 Multari. 작은 줄이 늘어서 있다.",
         interactions: [
           {
             setup: "줄을 서서 기다리다 차례가 됐다. 빵집 주인이 밝게 웃으며 물어본다.",
@@ -99,8 +99,8 @@ const GAME_DATA = {
         ]
       },
       {
-        location: "Café Les Deux Magots", emoji: "🌿",
-        intro: "오전 9시. 생제르맹 유명 카페. 햇살 좋은 테라스 자리를 노리자.",
+        location: "Café Le Plongeoir", emoji: "🌊",
+        intro: "오전 9시. 코코 비치 위 절벽의 카페. 바다가 한눈에 들어오는 테라스 자리를 노리자.",
         interactions: [
           {
             setup: "입구에서 웨이터가 자리를 안내하려 한다. 테라스 자리에 앉고 싶다.",
@@ -109,7 +109,7 @@ const GAME_DATA = {
             options: [
               { text: "Bonjour !\nEn terrasse,\ns'il vous plaît.", correct: true,
                 meaning: "안녕하세요! 테라스 자리 부탁해요.",
-                feedback: "Bien sûr ! 테라스 자리로 안내받았다. 생제르맹 거리가 한눈에 내려다보인다. ☀️" },
+                feedback: "Bien sûr ! 테라스 자리로 안내받았다. 베 데 장주(Baie des Anges)가 한눈에 펼쳐진다. ☀️🌊" },
               { text: "Bonjour !\nEn salle,\ns'il vous plaît.", correct: false,
                 feedback: "'실내(en salle)'를 선택했다. 테라스가 더 좋았는데... 이미 앉아버렸다. 🏠" },
               { text: "Bonsoir !\nUne table pour deux.", correct: false,
@@ -126,7 +126,7 @@ const GAME_DATA = {
             options: [
               { text: "Une tartine et\nun thé,\ns'il vous plaît.", correct: true,
                 meaning: "타르틴(버터 바른 토스트)과 차 부탁해요.",
-                feedback: "Excellent choix ! 토스트와 홍차가 나왔다. 테라스에서 마시는 파리의 아침. 🍵🥖" },
+                feedback: "Excellent choix ! 토스트와 홍차가 나왔다. 절벽 위 테라스에서 마시는 니스의 아침. 🍵🥖" },
               { text: "Un steak frites,\ns'il vous plaît.", correct: false,
                 feedback: "아침에 스테이크 프리트를? 웨이터가 놀라며 '저희는 아침 메뉴만 있어요'라고 한다. 🥩" },
               { text: "Deux cafés\net un croissant.", correct: false,
@@ -139,8 +139,8 @@ const GAME_DATA = {
         ]
       },
       {
-        location: "Hôtel Bonaparte", emoji: "🏨",
-        intro: "오전 7시. 호텔 식당에서 조식 포함 패키지. 여유롭게 아침 식사.",
+        location: "Hôtel Negresco", emoji: "🏨",
+        intro: "오전 7시. 프롬나드 데 장글레의 전설적인 호텔. 살롱 베르사유에서 조식.",
         interactions: [
           {
             setup: "호텔 식당 입구에서 직원이 묻는다. 숙박객임을 확인시켜 주자.",
@@ -149,7 +149,7 @@ const GAME_DATA = {
             options: [
               { text: "Oui, bonjour !\nChambre 214,\ns'il vous plaît.", correct: true,
                 meaning: "네, 안녕하세요! 214호입니다.",
-                feedback: "직원이 명부를 확인하고 창가 테이블로 안내한다. 조식 뷔페가 풍성하다! 🍳" },
+                feedback: "직원이 명부를 확인하고 바다가 보이는 테이블로 안내한다. 조식 뷔페가 풍성하다! 🍳" },
               { text: "Non, je voudrais\nle plat du jour.", correct: false,
                 feedback: "'아니요'라고 했더니 식당 이용이 불가하다고 한다. 배고프게 방으로 돌아갔다. 😢" },
               { text: "Bonsoir !\nUne table pour deux.", correct: false,
@@ -179,38 +179,38 @@ const GAME_DATA = {
         ]
       },
       {
-        location: "Café Vite Fait", emoji: "🏃",
-        intro: "오전 8시 30분. 오늘은 바쁜 날! 커피를 들고 나가기로 했다.",
+        location: "Boulangerie Espuno", emoji: "🏃",
+        intro: "오전 8시 30분. 오늘은 바쁜 날! 쿠르 살레야의 빵집에서 테이크아웃.",
         interactions: [
           {
-            setup: "카페에 들어서자 직원이 바로 묻는다. 테이크아웃임을 말하자.",
-            npcName: "Barista", npcFrench: '"Bonjour ! Pour consommer ici ou à emporter ?"',
+            setup: "빵집에 들어서자 직원이 바로 묻는다. 테이크아웃임을 말하자.",
+            npcName: "Vendeur", npcFrench: '"Bonjour ! Pour consommer ici ou à emporter ?"',
             npcMeaning: "안녕하세요! 여기서 드실 건가요, 포장이세요?",
             options: [
               { text: "À emporter,\ns'il vous plaît.", correct: true,
                 meaning: "포장해 주세요.",
-                feedback: "바리스타가 테이크아웃 컵을 꺼낸다. 빠른 서비스, 완벽한 선택! ☕🏃" },
+                feedback: "직원이 테이크아웃 봉투를 꺼낸다. 빠른 서비스, 완벽한 선택! 🥖🏃" },
               { text: "Pour consommer ici,\ns'il vous plaît.", correct: false,
-                feedback: "'여기서 마실게요'라고 했다. 앉아서 마시게 됐는데 이미 늦었다. 지각! ⏰" },
+                feedback: "'여기서 먹을게요'라고 했다. 앉아서 먹게 됐는데 이미 늦었다. 지각! ⏰" },
               { text: "Bonsoir !\nUne table pour deux.", correct: false,
-                feedback: "저녁 인사에 2인 테이블? 바리스타가 고개를 갸웃거린다. 😕" },
+                feedback: "저녁 인사에 2인 테이블? 직원이 고개를 갸웃거린다. 😕" },
               { text: "Je voudrais dormir.", correct: false,
-                feedback: "테이크아웃 카페에서 자고 싶다고? 바리스타가 멍하니 쳐다본다. 😴" }
+                feedback: "테이크아웃 빵집에서 자고 싶다고? 직원이 멍하니 쳐다본다. 😴" }
             ],
             hpChange: { success: 5, fail: -10 }
           },
           {
             setup: "주문을 받겠다는 눈빛을 보낸다.",
-            npcName: "Barista", npcFrench: '"Qu\'est-ce que vous prenez ?"',
+            npcName: "Vendeur", npcFrench: '"Qu\'est-ce que vous prenez ?"',
             npcMeaning: "무엇으로 하시겠어요?",
             options: [
-              { text: "Un café et\nun pain au chocolat,\ns'il vous plaît.", correct: true,
-                meaning: "커피 하나와 팽 오 쇼콜라 부탁해요.",
-                feedback: "테이크아웃 커피와 팽 오 쇼콜라! 걸어가면서 먹는 파리의 아침. 🥐☕✨" },
+              { text: "Un café et\nune part de pissaladière,\ns'il vous plaît.", correct: true,
+                meaning: "커피 하나와 피살라디에르(양파·안초비·올리브 타르트) 한 조각 부탁해요.",
+                feedback: "피살라디에르 한 조각과 커피! 양파와 안초비, 검은 올리브의 짭짤한 니스 빵. 길거리에서 한입! 🥧☕✨" },
               { text: "Le plat du jour,\ns'il vous plaît.", correct: false,
-                feedback: "테이크아웃 커피숍에서 오늘의 특선을? 바리스타가 메뉴판을 가리킨다. '없어요'. 😅" },
+                feedback: "테이크아웃 빵집에서 오늘의 특선을? 직원이 메뉴판을 가리킨다. '없어요'. 😅" },
               { text: "L'addition,\ns'il vous plaît.", correct: false,
-                feedback: "주문도 안 했는데 계산서부터! 당황한 바리스타가 다시 묻는다. 😵" },
+                feedback: "주문도 안 했는데 계산서부터! 당황한 직원이 다시 묻는다. 😵" },
               { text: "Deux cafés\net un croissant.", correct: false,
                 feedback: "혼자인데 커피 두 잔? 한 잔은 버려야 했다. 낭비! ☕☕" }
             ],
@@ -225,17 +225,17 @@ const GAME_DATA = {
     ═══════════════════════════════ */
     lunch: [
       {
-        location: "Brasserie Saint-Germain", emoji: "🍽️",
-        intro: "점심시간. 파리지앵들로 북적이는 브라스리. 자리를 잡아야 한다.",
+        location: "Chez Pipo", emoji: "🥞",
+        intro: "점심시간. 1923년부터 소카로 유명한 셰 피포. 니수아들 사이에 끼어 줄을 서자.",
         interactions: [
           {
-            setup: "레스토랑이 꽤 바쁘다. 웨이터가 다른 테이블을 서빙하며 당신 옆을 지나치려 한다.",
+            setup: "가게가 꽤 바쁘다. 웨이터가 다른 테이블을 서빙하며 당신 옆을 지나치려 한다.",
             npcName: "Situation", npcFrench: "(Le serveur passe rapidement à côté de vous)",
             npcMeaning: "(웨이터가 빠르게 옆을 지나친다)",
             options: [
               { text: "Excusez-moi,\nMonsieur !", correct: true,
                 meaning: "실례합니다!",
-                feedback: "웨이터가 돌아보며 반갑게 응한다. 좋은 자리로 안내해 준다! 👍" },
+                feedback: "웨이터가 돌아보며 반갑게 응한다. 화덕 옆 자리로 안내해 준다! 👍" },
               { text: "Garçon !\nGarçon !", correct: false,
                 feedback: "'가르송'은 현대 프랑스에서 실례가 되는 표현. 웨이터가 못 들은 척 지나간다. 😤" },
               { text: "Bonjour... ?", correct: false,
@@ -246,17 +246,17 @@ const GAME_DATA = {
             hpChange: { success: 5, fail: -10 }
           },
           {
-            setup: "웨이터가 주문을 받으러 왔다. 오늘의 특선 요리(플라 뒤 주르)로 하기로 했다.",
+            setup: "웨이터가 주문을 받으러 왔다. 셰 피포의 명물 소카(병아리콩 팬케이크)로 결정.",
             npcName: "Serveur", npcFrench: '"Vous avez choisi ?"',
             npcMeaning: "주문 결정하셨나요?",
             options: [
-              { text: "Je voudrais\nle plat du jour,\ns'il vous plaît.", correct: true,
-                meaning: "오늘의 특선으로 할게요.",
-                feedback: "오늘의 특선 완벽 주문! 얼마 후 맛있어 보이는 음식이 나온다. 🍖✨" },
+              { text: "Une socca et\nun verre de rosé,\ns'il vous plaît.", correct: true,
+                meaning: "소카(병아리콩 팬케이크)와 로제 한 잔 부탁해요.",
+                feedback: "갓 구운 소카와 시원한 로제! 셰 피포의 명물, 1923년부터 이어진 맛. 🥞🍷✨" },
               { text: "Je voudrais\nle petit-déjeuner.", correct: false,
                 feedback: "점심에 아침 식사를? 웨이터가 난처한 표정을 짓는다. 🌅" },
               { text: "Un croissant,\ns'il vous plaît.", correct: false,
-                feedback: "레스토랑 점심에 크루아상만? 웨이터가 고개를 갸웃거린다. 🥐" },
+                feedback: "소카 가게에서 크루아상만? 웨이터가 고개를 갸웃거린다. 🥐" },
               { text: "L'addition,\ns'il vous plaît.", correct: false,
                 feedback: "주문도 안 했는데 계산서를! 웨이터가 황당해한다. 😵" }
             ],
@@ -273,7 +273,7 @@ const GAME_DATA = {
               { text: "La carte,\ns'il vous plaît.", correct: false,
                 feedback: "식사 후에 메뉴판을? 웨이터가 의아해하며 가져온다. 😅" },
               { text: "Encore une fois,\ns'il vous plaît.", correct: false,
-                feedback: "'한 번 더'라고 했다. 음식이 또 나왔다. 배가 터진다. 💸" },
+                feedback: "'한 번 더'라고 했다. 소카가 또 나왔다. 배가 터진다. 💸" },
               { text: "Merci, au revoir !", correct: false,
                 feedback: "돈도 안 내고 나가려다 웨이터에게 제지당했다. 😱" }
             ],
@@ -282,103 +282,103 @@ const GAME_DATA = {
         ]
       },
       {
-        location: "Crêperie Bretonne", emoji: "🥞",
-        intro: "점심시간. 브르타뉴 전통 크레프리. 갈레트 한 장으로 든든하게.",
+        location: "Lou Pilha Leva", emoji: "🥪",
+        intro: "점심시간. 비외 니스의 'Lou Pilha Leva'(니수아 방언으로 '집어서 가져가기'). 다양한 니스 특산을 판다.",
         interactions: [
           {
-            setup: "크레프리에 들어섰다. 서버가 반갑게 인사하며 주문을 기다린다.",
+            setup: "야외 카운터에 섰다. 서버가 반갑게 인사하며 주문을 기다린다.",
             npcName: "Serveur", npcFrench: '"Bonjour ! Qu\'est-ce que vous souhaitez ?"',
             npcMeaning: "안녕하세요! 무엇을 원하시나요?",
             options: [
-              { text: "Bonjour !\nJe voudrais une galette\ncomplète, s'il vous plaît.", correct: true,
-                meaning: "안녕하세요! 갈레트 콩플레트(햄·달걀·치즈) 하나 부탁해요.",
-                feedback: "갈레트 콩플레트(햄+달걀+치즈)를 완벽하게 주문! 브르타뉴의 맛이 나온다. 🥞✨" },
+              { text: "Bonjour !\nUn pan bagnat,\ns'il vous plaît.", correct: true,
+                meaning: "안녕하세요! 팡 바냐(참치·안초비·토마토·올리브 샌드위치) 부탁해요.",
+                feedback: "두꺼운 빵 안에 참치, 토마토, 안초비, 올리브가 가득한 팡 바냐! 니스 점심의 챔피언. 🥪✨" },
               { text: "Bonjour !\nUne crêpe sucrée,\ns'il vous plaît.", correct: false,
-                feedback: "단 크레프를 주문했다. 식사용이 아닌 디저트 크레프라 배가 충분히 안 찼다. 🍓" },
+                feedback: "단 크레프를 주문했다. 식사용이 아닌 디저트라 배가 충분히 안 찼다. 🍓" },
               { text: "Le plat du jour,\ns'il vous plaît.", correct: false,
-                feedback: "크레프리에서 오늘의 특선을? 여기선 갈레트가 특선이야. 웨이터가 웃으며 설명해 준다. 😄" },
-              { text: "Bonsoir !\nDeux galettes,\ns'il vous plaît.", correct: false,
-                feedback: "저녁 인사에 2인분? 혼자인데 갈레트가 두 장 나왔다. 😅" }
+                feedback: "Lou Pilha Leva에서 오늘의 특선을? 여기선 다 특선이야. 서버가 웃으며 메뉴를 가리킨다. 😄" },
+              { text: "Bonsoir !\nDeux pan bagnats,\ns'il vous plaît.", correct: false,
+                feedback: "저녁 인사에 2인분? 혼자인데 팡 바냐가 두 개 나왔다. 😅" }
             ],
             hpChange: { success: 5, fail: -8 }
           },
           {
-            setup: "주문을 마치자 웨이터가 음료를 물어본다.",
+            setup: "주문을 마치자 서버가 음료를 물어본다.",
             npcName: "Serveur", npcFrench: '"Et comme boisson ?"',
             npcMeaning: "음료는 어떻게 하시겠어요?",
             options: [
-              { text: "Un cidre brut,\ns'il vous plaît.", correct: true,
-                meaning: "드라이 시드르(브르타뉴 사과주) 부탁해요.",
-                feedback: "갈레트에 시드르(브르타뉴 사과주)! 완벽한 조합. 웨이터가 엄지를 든다. 🍺🥞" },
+              { text: "Un verre de rosé\nde Provence, s'il vous plaît.", correct: true,
+                meaning: "프로방스 로제 한 잔 부탁해요.",
+                feedback: "팡 바냐에 프로방스 로제! 환상의 조합. 서버가 엄지를 든다. 🥪🍷" },
               { text: "Un café au lait,\ns'il vous plaît.", correct: false,
-                feedback: "카페오레를 주문했다. 갈레트에 카페오레는 좀 어색하지만... 그래도 괜찮다. ☕" },
+                feedback: "카페오레를 주문했다. 팡 바냐에 카페오레는 좀 어색하지만... 그래도 괜찮다. ☕" },
               { text: "L'addition,\ns'il vous plaît.", correct: false,
-                feedback: "아직 음식도 안 나왔는데 계산서를? 웨이터가 멈추며 다시 묻는다. 😵" },
+                feedback: "아직 음식도 안 나왔는데 계산서를? 서버가 멈추며 다시 묻는다. 😵" },
               { text: "Je voudrais dormir.", correct: false,
-                feedback: "음료 대신 자고 싶다고? 웨이터가 정중하게 시드르를 두고 간다. 😴" }
+                feedback: "음료 대신 자고 싶다고? 서버가 정중하게 물 한 잔을 두고 간다. 😴" }
             ],
             hpChange: { success: 23, fail: -12 }
           }
         ]
       },
       {
-        location: "Boulangerie-Sandwicherie", emoji: "🥪",
-        intro: "점심, 빠른 한 끼. 빵집에서 샌드위치를 사 먹기로 했다.",
+        location: "René Socca", emoji: "🥧",
+        intro: "점심, 빠른 한 끼. 비외 니스의 'René Socca'에서 한 접시 골라 먹기.",
         interactions: [
           {
-            setup: "빵집 카운터 앞에 섰다. 쇼케이스에 샌드위치들이 가득하다.",
+            setup: "카운터 앞에 섰다. 쇼케이스에 니스 특산이 가득하다.",
             npcName: "Vendeur", npcFrench: '"Bonjour ! Pour vous ?"',
             npcMeaning: "안녕하세요! 무엇으로 드릴까요?",
             options: [
-              { text: "Bonjour !\nUn sandwich\njambon-beurre, s'il vous plaît.", correct: true,
-                meaning: "안녕하세요! 잠봉 뵈르 샌드위치(햄·버터 바게트) 하나 부탁해요.",
-                feedback: "정통 파리 샌드위치 '잠봉 뵈르'! 직원이 바게트를 꺼내 바로 만들어준다. 🥖✨" },
+              { text: "Bonjour !\nUne part de pissaladière,\ns'il vous plaît.", correct: true,
+                meaning: "안녕하세요! 피살라디에르(양파·안초비·올리브 타르트) 한 조각 부탁해요.",
+                feedback: "피살라디에르 한 조각! 천천히 졸인 양파, 안초비, 검은 올리브의 환상 콤보. 🥧✨" },
               { text: "Bonjour !\nUn croissant,\ns'il vous plaît.", correct: false,
-                feedback: "샌드위치 대신 크루아상을 사먹게 됐다. 점심치고는 가볍다. 🥐" },
+                feedback: "니스 특산점에서 크루아상을? 직원이 '저희는 니스 음식만요'라고 한다. 🥐" },
               { text: "Je voudrais\nle plat du jour.", correct: false,
-                feedback: "샌드위치 가게에서 오늘의 특선을? 직원이 당황하며 '저희는 샌드위치만요'라고 한다. 😅" },
+                feedback: "카운터에서 오늘의 특선을? 직원이 당황하며 메뉴판을 가리킨다. 😅" },
               { text: "L'addition,\ns'il vous plaît.", correct: false,
                 feedback: "주문도 안 하고 계산서부터! 직원이 어리둥절해한다. 😵" }
             ],
             hpChange: { success: 5, fail: -8 }
           },
           {
-            setup: "샌드위치를 받았다. 계산하고 인사를 하자.",
+            setup: "피살라디에르를 받았다. 계산하고 인사를 하자.",
             npcName: "Vendeur", npcFrench: '"Voilà ! Ça fait cinq euros."',
             npcMeaning: "여기 있어요! 5유로입니다.",
             options: [
               { text: "(돈을 내며)\nMerci, bonne journée !", correct: true,
                 meaning: "감사합니다, 좋은 하루 보내세요!",
-                feedback: "'봉 주르네!' 직원도 밝게 웃으며 인사해 준다. 샌드위치를 들고 센 강변으로! 🌊☀️" },
+                feedback: "'봉 주르네!' 직원도 밝게 웃으며 인사해 준다. 피살라디에르를 들고 비외 니스 골목으로! 🌊☀️" },
               { text: "C'est combien ?", correct: false,
                 feedback: "방금 5유로라고 했는데 또 얼마냐고? 직원이 한숨을 쉰다. 😮‍💨" },
               { text: "Non, merci.", correct: false,
-                feedback: "샌드위치를 안 사겠다고? 직원이 다시 케이스에 넣는다. 굶었다. 😭" },
+                feedback: "안 사겠다고? 직원이 다시 케이스에 넣는다. 굶었다. 😭" },
               { text: "Encore une fois,\ns'il vous plaît.", correct: false,
-                feedback: "'한 번 더'라고 했더니 샌드위치가 두 개가 됐다. 10유로를 내야 했다. 💸" }
+                feedback: "'한 번 더'라고 했더니 피살라디에르가 두 조각이 됐다. 10유로를 내야 했다. 💸" }
             ],
             hpChange: { success: 23, fail: -12 }
           }
         ]
       },
       {
-        location: "Restaurant Le Procope", emoji: "📋",
-        intro: "오늘은 조금 특별한 레스토랑. 미리 예약을 해뒀다.",
+        location: "Restaurant Olive et Artichaut", emoji: "📋",
+        intro: "오늘은 조금 특별한 점심. 비외 니스의 모던 니수아즈 식당, 미리 예약을 해뒀다.",
         interactions: [
           {
-            setup: "파리에서 가장 오래된 카페 레스토랑 입구. 직원이 반갑게 맞이한다.",
+            setup: "쾌적한 식당 입구. 직원이 반갑게 맞이한다.",
             npcName: "Maître d'hôtel", npcFrench: '"Bonjour ! Vous avez une réservation ?"',
             npcMeaning: "안녕하세요! 예약하셨나요?",
             options: [
               { text: "Oui, bonjour !\nAu nom de Kim.", correct: true,
                 meaning: "네, 안녕하세요! 김 이름으로 예약했어요.",
-                feedback: "직원이 예약 명단에서 이름을 찾아 최고의 자리로 안내해 준다. 🌟" },
+                feedback: "직원이 예약 명단에서 이름을 찾아 가장 좋은 자리로 안내해 준다. 🌟" },
               { text: "Non,\nsans réservation.", correct: false,
                 feedback: "예약을 해놨는데 없다고 했다. 한참 혼란이 생긴 후에야 자리에 앉았다. 😰" },
               { text: "Bonsoir !\nUne table pour deux.", correct: false,
                 feedback: "점심에 저녁 인사, 2인 테이블? 직원이 예약 명단과 대조하며 혼란스러워한다. 😅" },
               { text: "Je voudrais dormir.", correct: false,
-                feedback: "레스토랑 입구에서 자고 싶다고? 직원이 정중하게 돌아서라고 한다. 😶" }
+                feedback: "식당 입구에서 자고 싶다고? 직원이 정중하게 돌아서라고 한다. 😶" }
             ],
             hpChange: { success: 5, fail: -8 }
           },
@@ -389,7 +389,7 @@ const GAME_DATA = {
             options: [
               { text: "Le menu,\ns'il vous plaît.", correct: true,
                 meaning: "코스 메뉴로 부탁해요.",
-                feedback: "코스 메뉴 선택! 앙트레, 플라, 디저트까지 차례로 나온다. 훌륭한 점심! 🍽️✨" },
+                feedback: "코스 메뉴 선택! 투르트 드 블레트 → 페티 파르시 → 망통 레몬 타르트. 훌륭한 니스 점심! 🍽️✨" },
               { text: "À la carte,\ns'il vous plaît.", correct: false,
                 feedback: "단품 주문을 선택했다. 비쌌지만 먹고 싶었던 요리만 먹었다. 💸" },
               { text: "L'addition,\ns'il vous plaît.", correct: false,
@@ -402,21 +402,21 @@ const GAME_DATA = {
         ]
       },
       {
-        location: "Café de Flore", emoji: "🌸",
-        intro: "점심. 유명 카페에서 가볍게 크로크무슈 한 장.",
+        location: "Le Safari", emoji: "🌞",
+        intro: "점심. 쿠르 살레야의 인기 카페 Le Safari. 시장 풍경을 보며 가볍게 한 접시.",
         interactions: [
           {
             setup: "자리에 앉자 웨이터가 주문을 받으러 왔다.",
             npcName: "Serveur", npcFrench: '"Bonjour ! Vous désirez ?"',
             npcMeaning: "안녕하세요! 무엇을 드릴까요?",
             options: [
-              { text: "Bonjour !\nUn croque-monsieur\net une salade, s'il vous plaît.", correct: true,
-                meaning: "안녕하세요! 크로크무슈(구운 햄치즈 샌드위치)와 샐러드 부탁해요.",
-                feedback: "크로크무슈(구운 햄치즈 샌드위치)와 샐러드! 파리 카페의 정석 점심. 🥪🥗" },
+              { text: "Bonjour !\nUne salade niçoise,\ns'il vous plaît.", correct: true,
+                meaning: "안녕하세요! 살라드 니수아즈 부탁해요.",
+                feedback: "정통 살라드 니수아즈! 참치, 안초비, 토마토, 올리브, 삶은 달걀. 햇빛 가득한 니스 점심. 🥗☀️" },
               { text: "Bonsoir !\nUn steak frites,\ns'il vous plaît.", correct: false,
                 feedback: "점심에 저녁 인사에 스테이크를? 웨이터가 어색하게 웃으며 메뉴판을 다시 준다. 🥩" },
               { text: "Le plat du jour,\ns'il vous plaît.", correct: false,
-                feedback: "오늘의 특선을 주문했다. 나쁘진 않지만 크로크무슈가 더 먹고 싶었다. 😑" },
+                feedback: "오늘의 특선을 주문했다. 나쁘진 않지만 살라드 니수아즈가 더 먹고 싶었다. 😑" },
               { text: "L'addition,\ns'il vous plaît.", correct: false,
                 feedback: "주문도 안 했는데 계산서부터! 웨이터가 멈추며 다시 묻는다. 😵" }
             ],
@@ -448,28 +448,28 @@ const GAME_DATA = {
     ═══════════════════════════════ */
     snack: [
       {
-        location: "Boulangerie Dupont", emoji: "🥖",
-        intro: "오후 4시. 달콤한 간식 시간. 골목 안 작은 빵집이 눈에 들어왔다.",
+        location: "Boulangerie Veziano", emoji: "🥖",
+        intro: "오후 4시. 달콤한 간식 시간. 비외 니스의 베지아노. 빵 굽는 향기가 가득하다.",
         interactions: [
           {
-            setup: "빵집 문을 열고 들어섰다. 빵 굽는 향기가 가득하다. 주인 아주머니가 고개를 든다.",
+            setup: "빵집 문을 열고 들어섰다. 주인 아주머니가 고개를 든다.",
             npcName: "Patronne", npcFrench: '"Bonjour, Monsieur/Madame !"',
             npcMeaning: "안녕하세요!",
             options: [
-              { text: "Bonjour !\nUn pain au chocolat,\ns'il vous plaît.", correct: true,
-                meaning: "안녕하세요! 팽 오 쇼콜라(초콜릿 크루아상) 하나 부탁해요.",
-                feedback: "인사와 주문 모두 완벽! 갓 구운 팽 오 쇼콜라, 초콜릿이 녹아 흘러내린다. 🍫🥐" },
+              { text: "Bonjour !\nUne fougassette,\ns'il vous plaît.", correct: true,
+                meaning: "안녕하세요! 푸가세트(오렌지꽃 향 니스 빵) 부탁해요.",
+                feedback: "인사와 주문 모두 완벽! 오렌지꽃 향 가득한 푸가세트, 부드럽고 달콤하다. 🥐✨" },
               { text: "Bonsoir !\nUn croissant,\ns'il vous plaît.", correct: false,
                 feedback: "오후 4시에 저녁 인사에 크루아상? 아주머니가 어색하게 웃으며 크루아상을 준다. 😅" },
               { text: "Bonjour !\nUn café au lait,\ns'il vous plaît.", correct: false,
                 feedback: "빵집에서 카페오레를? 아주머니가 '저희는 빵만 팔아요'라고 한다. ☕" },
-              { text: "Un pain au chocolat,\nmerci !", correct: false,
+              { text: "Une fougassette,\nmerci !", correct: false,
                 feedback: "인사 없이 바로 주문. 아주머니가 살짝 당황하지만 빵을 준다. 분위기가 싸늘하다. 🥶" }
             ],
             hpChange: { success: 5, fail: -5 }
           },
           {
-            setup: "아주머니가 빵을 봉투에 담아 건네며 말한다.",
+            setup: "아주머니가 푸가세트를 봉투에 담아 건네며 말한다.",
             npcName: "Patronne", npcFrench: '"Ça fait deux euros, s\'il vous plaît."',
             npcMeaning: "2유로입니다.",
             options: [
@@ -488,8 +488,8 @@ const GAME_DATA = {
         ]
       },
       {
-        location: "Berthillon — Glacier", emoji: "🍦",
-        intro: "오후 3시. 파리에서 가장 유명한 아이스크림 가게. 줄이 길다!",
+        location: "Fenocchio — Glacier", emoji: "🍦",
+        intro: "오후 3시. 플라스 로제티의 전설적인 아이스크림 가게. 95가지 맛, 줄이 길다!",
         interactions: [
           {
             setup: "드디어 차례가 됐다. 직원이 스쿱 수를 물어본다.",
@@ -513,9 +513,9 @@ const GAME_DATA = {
             npcName: "Serveur", npcFrench: '"Quel parfum ?"',
             npcMeaning: "어떤 맛으로 드릴까요?",
             options: [
-              { text: "Vanille et chocolat,\ns'il vous plaît.", correct: true,
-                meaning: "바닐라와 초콜릿으로 부탁해요.",
-                feedback: "바닐라와 초콜릿! 베르티옹 최고의 콤비. 파리 센 강변에서 먹는 아이스크림. 🍦❤️" },
+              { text: "Citron de Menton\net basilic,\ns'il vous plaît.", correct: true,
+                meaning: "망통 레몬과 바질로 부탁해요.",
+                feedback: "망통 레몬과 바질! Fenocchio의 시그니처 95가지 맛 중 가장 니스다운 조합. 코트다쥐르의 맛. 🍦☀️" },
               { text: "Un café au lait,\ns'il vous plaît.", correct: false,
                 feedback: "아이스크림 가게에서 카페오레를? 직원이 재차 맛을 물어본다. ☕" },
               { text: "L'addition,\ns'il vous plaît.", correct: false,
@@ -528,8 +528,8 @@ const GAME_DATA = {
         ]
       },
       {
-        location: "Salon de Thé Angelina", emoji: "🍵",
-        intro: "오후 4시. 파리 최고의 살롱 드 테. 몽블랑 케이크가 유명하다.",
+        location: "Pâtisserie LAC", emoji: "🍵",
+        intro: "오후 4시. 마이트르 쇼콜라티에 패트릭 라크의 살롱. 망통 레몬 타르트가 유명하다.",
         interactions: [
           {
             setup: "우아한 살롱에 들어섰다. 직원이 인원수를 물어본다.",
@@ -553,11 +553,11 @@ const GAME_DATA = {
             npcName: "Serveur", npcFrench: '"Qu\'est-ce que vous prenez ?"',
             npcMeaning: "무엇으로 하시겠어요?",
             options: [
-              { text: "Un thé et\nun mont-blanc,\ns'il vous plaît.", correct: true,
-                meaning: "차 하나와 몽블랑 케이크 부탁해요.",
-                feedback: "홍차와 몽블랑 케이크! 살롱 드 테의 정석 오더. 크림이 넘치는 케이크가 나왔다. 🍵🍰" },
+              { text: "Un thé et\nune tarte au citron\nde Menton, s'il vous plaît.", correct: true,
+                meaning: "차 하나와 망통 레몬 타르트 부탁해요.",
+                feedback: "홍차와 망통 레몬 타르트! 코트다쥐르 디저트의 정수. 레몬의 산미가 입안에 가득. 🍋✨" },
               { text: "Un café et\nun croissant,\ns'il vous plaît.", correct: false,
-                feedback: "카페와 크루아상을 주문했다. 나쁘지 않지만 몽블랑이 눈에 밟힌다. ☕🥐" },
+                feedback: "카페와 크루아상을 주문했다. 나쁘지 않지만 망통 레몬 타르트가 눈에 밟힌다. ☕🥐" },
               { text: "Un steak frites,\ns'il vous plaît.", correct: false,
                 feedback: "살롱 드 테에서 스테이크 프리트를? 웨이터가 조용히 메뉴판을 다시 건넨다. 😐" },
               { text: "Je voudrais dormir.", correct: false,
@@ -568,19 +568,19 @@ const GAME_DATA = {
         ]
       },
       {
-        location: "Marché Bastille", emoji: "🛒",
-        intro: "오후 4시 30분. 바스티유 야외 시장. 과일을 사보자.",
+        location: "Marché aux Fleurs Cours Saleya", emoji: "🛒",
+        intro: "오후 4시 30분. 쿠르 살레야의 야외 시장. 신선한 과일을 사보자.",
         interactions: [
           {
-            setup: "딸기 가판대 앞에 섰다. 상인 아저씨가 반갑게 인사한다.",
+            setup: "무화과 가판대 앞에 섰다. 상인 아저씨가 반갑게 인사한다.",
             npcName: "Marchand", npcFrench: '"Bonjour ! Vous désirez ?"',
             npcMeaning: "안녕하세요! 무엇을 원하세요?",
             options: [
-              { text: "Bonjour !\nC'est combien,\nles fraises ?", correct: true,
-                meaning: "안녕하세요! 딸기 얼마예요?",
-                feedback: "'딸기 얼마예요?' 상인이 '킬로당 4유로요!'라고 밝게 대답한다. 🍓" },
+              { text: "Bonjour !\nC'est combien,\nles figues ?", correct: true,
+                meaning: "안녕하세요! 무화과 얼마예요?",
+                feedback: "'무화과 얼마예요?' 상인이 '킬로당 6유로요!'라고 밝게 대답한다. 🍇" },
               { text: "Bonsoir !\nJe voudrais\ndes pommes.", correct: false,
-                feedback: "저녁 인사에 사과를? 딸기 가판대에서. 상인이 사과는 저쪽에 있다고 알려준다. 🍎" },
+                feedback: "저녁 인사에 사과를? 무화과 가판대에서. 상인이 사과는 저쪽에 있다고 알려준다. 🍎" },
               { text: "L'addition,\ns'il vous plaît.", correct: false,
                 feedback: "시장에서 계산서를? 상인이 어이없어하며 웃는다. 😂" },
               { text: "Je voudrais dormir.", correct: false,
@@ -590,56 +590,56 @@ const GAME_DATA = {
           },
           {
             setup: "상인이 킬로당 가격을 알려줬다.",
-            npcName: "Marchand", npcFrench: '"Quatre euros le kilo !"',
-            npcMeaning: "킬로당 4유로예요!",
+            npcName: "Marchand", npcFrench: '"Six euros le kilo !"',
+            npcMeaning: "킬로당 6유로예요!",
             options: [
               { text: "Un kilo,\ns'il vous plaît.", correct: true,
                 meaning: "1킬로 부탁해요.",
-                feedback: "1킬로 주문! 상인이 신선한 딸기를 봉투에 담아준다. 간식으로 완벽. 🍓✨" },
+                feedback: "1킬로 주문! 상인이 잘 익은 무화과를 봉투에 담아준다. 간식으로 완벽. 🍇✨" },
               { text: "Deux kilos,\ns'il vous plaît.", correct: false,
-                feedback: "2킬로는 너무 많다. 혼자 다 먹기 힘들다. 8유로를 냈다. 💸" },
+                feedback: "2킬로는 너무 많다. 혼자 다 먹기 힘들다. 12유로를 냈다. 💸" },
               { text: "Non, merci.", correct: false,
                 feedback: "'아니요'라고 했다. 상인이 씩 웃으며 '다음에 또 오세요!'라고 한다. 간식 없음. 😑" },
               { text: "C'est combien ?", correct: false,
-                feedback: "방금 킬로당 4유로라고 했는데 또 얼마냐고? 상인이 다시 한번 설명해 준다. 😮‍💨" }
+                feedback: "방금 킬로당 6유로라고 했는데 또 얼마냐고? 상인이 다시 한번 설명해 준다. 😮‍💨" }
             ],
             hpChange: { success: 20, fail: -8 }
           }
         ]
       },
       {
-        location: "Pâtisserie Paul", emoji: "🧁",
-        intro: "오후 3시 30분. 파티스리 쇼윈도에 에클레르가 눈에 들어왔다.",
+        location: "Maison Auer", emoji: "🍫",
+        intro: "오후 3시 30분. 1820년부터 이어진 전설의 confiserie. 과일 콩피로 유명하다.",
         interactions: [
           {
-            setup: "파티스리 카운터 앞에 섰다. 직원이 눈을 마주치며 말한다.",
+            setup: "고풍스러운 가게 카운터 앞에 섰다. 직원이 눈을 마주치며 말한다.",
             npcName: "Vendeuse", npcFrench: '"Bonjour ! Je vous écoute."',
             npcMeaning: "안녕하세요! 말씀하세요.",
             options: [
-              { text: "Bonjour !\nUn éclair au chocolat,\ns'il vous plaît.", correct: true,
-                meaning: "안녕하세요! 초콜릿 에클레르 하나 부탁해요.",
-                feedback: "에클레르 오 쇼콜라 주문 완료! 초콜릿 크림이 가득 찬 에클레르가 나왔다. 🍫✨" },
+              { text: "Bonjour !\nUn assortiment de\nfruits confits, s'il vous plaît.", correct: true,
+                meaning: "안녕하세요! 과일 콩피(설탕에 절인 과일) 모듬 부탁해요.",
+                feedback: "1820년부터 이어진 메종 오에르의 명물 fruits confits! 살구, 무화과, 멜론까지. 🍑✨" },
               { text: "Bonsoir !\nUn croissant,\ns'il vous plaît.", correct: false,
-                feedback: "오후에 저녁 인사에 크루아상을? 직원이 어색하게 웃으며 크루아상을 꺼낸다. 🥐" },
+                feedback: "오후에 저녁 인사에 크루아상을? 직원이 어색하게 웃으며 '저희는 confiserie예요'라고 한다. 🥐" },
               { text: "Je voudrais\nle plat du jour.", correct: false,
-                feedback: "파티스리에서 오늘의 특선을? '저희는 케이크만 팔아요'라는 대답이 돌아온다. 😅" },
+                feedback: "콩피즈리에서 오늘의 특선을? '저희는 과일 콩피와 초콜릿만 팔아요'라는 대답이 돌아온다. 😅" },
               { text: "L'addition,\ns'il vous plaît.", correct: false,
                 feedback: "주문도 안 하고 계산서를! 직원이 당황해한다. 😵" }
             ],
             hpChange: { success: 5, fail: -5 }
           },
           {
-            setup: "에클레르를 포장해 준다. 직원이 묻는다.",
+            setup: "과일 콩피를 포장해 준다. 직원이 묻는다.",
             npcName: "Vendeuse", npcFrench: '"C\'est tout ?"',
             npcMeaning: "이게 전부인가요?",
             options: [
               { text: "Oui,\nc'est pour offrir.", correct: true,
                 meaning: "네, 선물용이에요.",
-                feedback: "'네, 선물용이에요.' 직원이 예쁜 리본 상자에 담아준다. 완벽한 파리 기념품! 🎁🍫" },
+                feedback: "'네, 선물용이에요.' 직원이 예쁜 리본 상자에 담아준다. 완벽한 니스 기념품! 🎁🍫" },
               { text: "Oui,\nc'est pour manger ici.", correct: false,
-                feedback: "'여기서 먹을게요.' 직원이 접시에 담아준다. 카페처럼 먹게 됐다. 나쁘진 않다. 🍽️" },
+                feedback: "'여기서 먹을게요.' 직원이 작은 접시에 담아준다. 카운터에 서서 먹게 됐다. 나쁘진 않다. 🍽️" },
               { text: "Non,\nencore une fois.", correct: false,
-                feedback: "'한 번 더'라고 했다. 에클레르가 두 개가 됐다. 지갑이 얇아진다. 💸🍫" },
+                feedback: "'한 번 더'라고 했다. 과일 콩피가 두 박스가 됐다. 지갑이 얇아진다. 💸🍫" },
               { text: "L'addition,\ns'il vous plaît.", correct: false,
                 feedback: "'이게 전부냐'는 질문에 계산서를? 직원이 멈추며 다시 묻는다. 😅" }
             ],
@@ -654,11 +654,11 @@ const GAME_DATA = {
     ═══════════════════════════════ */
     dinner: [
       {
-        location: "Bistro Le Marché", emoji: "🍷",
-        intro: "저녁 7시 30분. 파리에 노을이 진다. 아늑한 비스트로가 기다린다.",
+        location: "L'Acchiardo", emoji: "🍷",
+        intro: "저녁 7시 30분. 노을이 진다. 비외 니스의 전설적인 가족 식당 L'Acchiardo. 1927년부터 이어진 곳.",
         interactions: [
           {
-            setup: "비스트로 문을 열었다. 매니저가 반갑게 맞이한다.",
+            setup: "식당 문을 열었다. 가족 매니저가 반갑게 맞이한다.",
             npcName: "Maître d'hôtel", npcFrench: '"Bonsoir ! Vous avez une réservation ?"',
             npcMeaning: "안녕하세요! 예약하셨나요?",
             options: [
@@ -675,13 +675,13 @@ const GAME_DATA = {
             hpChange: { success: 5, fail: -10 }
           },
           {
-            setup: "메뉴를 보다 스테이크 프리트(스테이크 + 감자튀김)로 결정했다. 웨이터가 왔다.",
+            setup: "메뉴를 보다 도브 니수아즈(니스식 소고기 스튜)로 결정했다. 웨이터가 왔다.",
             npcName: "Serveur", npcFrench: '"Qu\'est-ce que vous prenez ?"',
             npcMeaning: "무엇으로 하시겠어요?",
             options: [
-              { text: "Je voudrais\nun steak frites,\ns'il vous plaît.", correct: true,
-                meaning: "스테이크 프리트(스테이크와 감자튀김)로 할게요.",
-                feedback: "완벽한 주문! 풍성한 스테이크 프리트가 나온다. 오늘의 하이라이트! 🥩🍟" },
+              { text: "Je voudrais\nla daube niçoise,\ns'il vous plaît.", correct: true,
+                meaning: "도브 니수아즈(니스식 소고기 스튜) 부탁해요.",
+                feedback: "푹 끓인 도브 니수아즈와 폴렌타! 며칠 동안 조리한 깊은 맛. 오늘의 하이라이트! 🥩🍷" },
               { text: "Un croissant et\nun café,\ns'il vous plaît.", correct: false,
                 feedback: "저녁에 크루아상과 커피? 웨이터가 살짝 당황하지만 가져온다. 저녁이 허전하다. 🥐" },
               { text: "Je voudrais\nle petit-déjeuner.", correct: false,
@@ -711,11 +711,11 @@ const GAME_DATA = {
         ]
       },
       {
-        location: "Restaurant Chez Fonfon", emoji: "🌿",
-        intro: "저녁 7시. 프로방스 요리 전문점. 부야베스를 먹어보자.",
+        location: "Le Bistrot d'Antoine", emoji: "🌿",
+        intro: "저녁 7시. 비외 니스의 인기 비스트로 Antoine. 페티 파르시가 유명하다.",
         interactions: [
           {
-            setup: "레스토랑 문을 열었다. 저녁이라 꽤 붐빈다.",
+            setup: "비스트로 문을 열었다. 저녁이라 꽤 붐빈다.",
             npcName: "Serveur", npcFrench: '"Bonsoir ! Vous avez réservé ?"',
             npcMeaning: "안녕하세요! 예약하셨나요?",
             options: [
@@ -732,15 +732,15 @@ const GAME_DATA = {
             hpChange: { success: 5, fail: -10 }
           },
           {
-            setup: "메뉴를 훑어보다 부야베스(프로방스 생선 스튜)로 결정했다.",
+            setup: "메뉴를 훑어보다 페티 파르시 니수아(니스식 속채운 야채)로 결정했다.",
             npcName: "Serveur", npcFrench: '"Qu\'est-ce que vous désirez comme plat ?"',
             npcMeaning: "어떤 요리로 하시겠어요?",
             options: [
-              { text: "Je voudrais\nla bouillabaisse,\ns'il vous plaît.", correct: true,
-                meaning: "부야베스(프로방스 해산물 스튜)로 할게요.",
-                feedback: "부야베스 완벽 주문! 신선한 해산물과 사프란 향이 가득한 스튜가 나온다. 🦞🍲" },
+              { text: "Je voudrais\nles petits farcis niçois,\ns'il vous plaît.", correct: true,
+                meaning: "페티 파르시 니수아(속채운 토마토·호박·양파) 부탁해요.",
+                feedback: "페티 파르시 완벽 주문! 토마토, 호박, 양파에 속을 가득 채운 니스 가정식의 정수. 🍅✨" },
               { text: "Un steak frites,\ns'il vous plaît.", correct: false,
-                feedback: "프로방스 레스토랑에서 스테이크 프리트? 웨이터가 살짝 아쉬운 표정이다. 나쁘진 않다. 🥩" },
+                feedback: "니수아 비스트로에서 스테이크 프리트? 웨이터가 살짝 아쉬운 표정이다. 나쁘진 않다. 🥩" },
               { text: "Le petit-déjeuner,\ns'il vous plaît.", correct: false,
                 feedback: "저녁에 아침 식사를? 웨이터가 정중하게 저녁 메뉴를 다시 설명한다. 😅" },
               { text: "L'addition,\ns'il vous plaît.", correct: false,
@@ -751,8 +751,8 @@ const GAME_DATA = {
         ]
       },
       {
-        location: "Brasserie de l'Est", emoji: "🍺",
-        intro: "저녁 8시. 알자스 전통 브라스리. 돼지 요리와 맥주로 유명하다.",
+        location: "L'Escalinada", emoji: "🦪",
+        intro: "저녁 8시. 비외 니스의 전통 식당 L'Escalinada. 니스 가정식과 해산물로 유명.",
         interactions: [
           {
             setup: "웨이터가 인원 수를 물어본다.",
@@ -761,7 +761,7 @@ const GAME_DATA = {
             options: [
               { text: "Bonsoir !\nJe suis seul(e),\ns'il vous plaît.", correct: true,
                 meaning: "안녕하세요! 혼자예요.",
-                feedback: "'혼자예요.' 웨이터가 바 테이블의 편안한 자리로 안내한다. 혼밥의 낭만! 🍺🪑" },
+                feedback: "'혼자예요.' 웨이터가 화기애애한 분위기의 작은 테이블로 안내한다. 혼밥의 낭만! 🪑🌙" },
               { text: "Bonsoir !\nDeux personnes,\ns'il vous plaît.", correct: false,
                 feedback: "2인 자리로 안내됐다. 혼자 넓은 자리에 앉아서 좀 어색하다. 😅" },
               { text: "Bonjour !\nJe suis seul(e).", correct: false,
@@ -772,13 +772,13 @@ const GAME_DATA = {
             hpChange: { success: 5, fail: -8 }
           },
           {
-            setup: "메뉴를 보다 물 프리트(홍합 + 감자튀김)와 맥주로 결정했다.",
+            setup: "메뉴를 보다 피스투 홍합과 니스 자체 와인 벨레로 결정했다.",
             npcName: "Serveur", npcFrench: '"Vous avez choisi ?"',
             npcMeaning: "주문 결정하셨나요?",
             options: [
-              { text: "Je voudrais des\nmoules frites et\nune bière, s'il vous plaît.", correct: true,
-                meaning: "홍합 프리트(홍합·감자튀김)와 맥주 하나 부탁해요.",
-                feedback: "물 프리트(홍합+감자튀김)와 맥주! 알자스 브라스리의 정석. 홍합이 수북하게 나온다. 🦪🍺✨" },
+              { text: "Je voudrais des\nmoules au pistou et\nun verre de Bellet,\ns'il vous plaît.", correct: true,
+                meaning: "피스투 홍합(바질 페스토 홍합)과 벨레 와인 한 잔 부탁해요.",
+                feedback: "피스투 홍합과 벨레! 벨레는 니스 자체 AOC 와인. 향긋한 바질과 와인의 환상 조합. 🦪🍷✨" },
               { text: "Un croissant,\ns'il vous plaît.", correct: false,
                 feedback: "저녁에 크루아상만? 웨이터가 살짝 걱정스러운 눈빛을 보내며 가져온다. 🥐" },
               { text: "Le petit-déjeuner,\ns'il vous plaît.", correct: false,
@@ -791,36 +791,36 @@ const GAME_DATA = {
         ]
       },
       {
-        location: "Ristorante Da Mario", emoji: "🍕",
-        intro: "저녁 7시 30분. 파리에는 이탈리안 레스토랑도 많다. 오늘은 피자!",
+        location: "Pizzeria Cresci", emoji: "🍕",
+        intro: "저녁 7시 30분. 니스는 이탈리아 국경과 가까워 피자 문화도 깊다. 오늘은 명물 피체리아 크레시!",
         interactions: [
           {
-            setup: "이탈리안 레스토랑 문을 열었다. 반가운 인사를 건네는 직원.",
+            setup: "피체리아 문을 열었다. 반가운 인사를 건네는 직원.",
             npcName: "Serveur", npcFrench: '"Bonsoir ! Vous êtes combien ce soir ?"',
             npcMeaning: "안녕하세요! 오늘 저녁 몇 분이세요?",
             options: [
               { text: "Bonsoir !\nJe suis seul(e),\ns'il vous plaît.", correct: true,
                 meaning: "안녕하세요! 혼자예요.",
-                feedback: "저녁 인사와 1인 확인! 테라스 쪽 아늑한 자리로 안내받는다. 🍕🌙" },
+                feedback: "저녁 인사와 1인 확인! 화덕이 보이는 아늑한 자리로 안내받는다. 🍕🌙" },
               { text: "Bonjour !\nDeux personnes.", correct: false,
                 feedback: "저녁에 아침 인사에 2인 자리? 직원이 어색하게 웃으며 자리로 안내한다. 😅" },
               { text: "Bonsoir !\nL'addition,\ns'il vous plaît.", correct: false,
                 feedback: "들어오자마자 계산서를? 직원이 황당해한다. 😵" },
               { text: "Je voudrais dormir.", correct: false,
-                feedback: "레스토랑에서 자고 싶다고? 직원이 정중하게 '저희는 식당이에요'라고 한다. 😴" }
+                feedback: "피체리아에서 자고 싶다고? 직원이 정중하게 '저희는 식당이에요'라고 한다. 😴" }
             ],
             hpChange: { success: 5, fail: -8 }
           },
           {
-            setup: "메뉴를 보다 마르게리타 피자로 결정했다.",
+            setup: "메뉴를 보다 피살라디에르(니스식 양파 피자)로 결정했다.",
             npcName: "Serveur", npcFrench: '"Qu\'est-ce que vous prenez ?"',
             npcMeaning: "무엇으로 하시겠어요?",
             options: [
-              { text: "Une pizza\nmargherita,\ns'il vous plaît.", correct: true,
-                meaning: "마르게리타 피자 하나 부탁해요.",
-                feedback: "마르게리타 피자 완벽 주문! 얇은 도우에 신선한 토마토소스와 모짜렐라. 🍕✨" },
+              { text: "Une pissaladière\net un verre de rosé,\ns'il vous plaît.", correct: true,
+                meaning: "피살라디에르(니스식 양파 피자)와 로제 한 잔 부탁해요.",
+                feedback: "피살라디에르 + 로제! 천천히 졸인 양파, 안초비, 검은 올리브 가득. 니스의 피자. 🍕🍷" },
               { text: "Un steak frites,\ns'il vous plaît.", correct: false,
-                feedback: "이탈리안 레스토랑에서 스테이크 프리트? 직원이 잠시 고민하더니 '없어요'라고 한다. 🥩" },
+                feedback: "피체리아에서 스테이크 프리트? 직원이 잠시 고민하더니 '없어요'라고 한다. 🥩" },
               { text: "Le plat du jour,\ns'il vous plaît.", correct: false,
                 feedback: "오늘의 특선을 주문했다. 파스타가 나왔다. 나쁘지 않지만 피자가 더 먹고 싶었다. 🍝" },
               { text: "L'addition,\ns'il vous plaît.", correct: false,
@@ -831,8 +831,8 @@ const GAME_DATA = {
         ]
       },
       {
-        location: "Bistrot Chic — Le Dôme", emoji: "🥂",
-        intro: "저녁 8시. 오늘은 특별한 날. 분위기 좋은 레스토랑에서 저녁을.",
+        location: "La Petite Maison", emoji: "🥂",
+        intro: "저녁 8시. 오늘은 특별한 날. 니스의 전설 La Petite Maison에서 저녁을.",
         interactions: [
           {
             setup: "고급스러운 레스토랑 문을 열었다. 소믈리에가 메뉴를 권한다.",
@@ -852,13 +852,13 @@ const GAME_DATA = {
             hpChange: { success: 5, fail: -8 }
           },
           {
-            setup: "음식을 주문했다. 이번엔 와인을 곁들이고 싶다.",
+            setup: "음식을 주문했다. 이번엔 니스 자체 와인 벨레를 곁들이고 싶다.",
             npcName: "Serveur", npcFrench: '"Et comme boisson ?"',
             npcMeaning: "음료는 어떻게 하시겠어요?",
             options: [
-              { text: "Un verre de vin\nrouge, s'il vous plaît.", correct: true,
-                meaning: "레드와인 한 잔 부탁해요.",
-                feedback: "레드와인 한 잔! 소믈리에가 자신 있게 추천 와인을 따라준다. 오늘 저녁은 완벽하다. 🍷✨" },
+              { text: "Un verre de Bellet\nrouge, s'il vous plaît.", correct: true,
+                meaning: "벨레 레드와인 한 잔 부탁해요.",
+                feedback: "벨레 레드! 니스 카브에서 시작된 자체 AOC 와인. 소믈리에가 자랑스럽게 따라준다. 🍷✨" },
               { text: "Un café au lait,\ns'il vous plaît.", correct: false,
                 feedback: "고급 레스토랑 저녁에 카페오레를? 웨이터가 살짝 당황하지만 가져온다. ☕" },
               { text: "L'addition,\ns'il vous plaît.", correct: false,
